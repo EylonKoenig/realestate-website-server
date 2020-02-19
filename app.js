@@ -13,8 +13,9 @@ var registerRouter = require('./routes/register');
 var cors = require('cors')
 
 var app = express();
-app.use(cors({ credentials: true, origin: ['https://koenigrealestate.netlify.com', 'http://localhost:3000'] }))
 
+
+app.use(cors({ credentials: true, origin: ['https://koenigrealestate.netlify.com', 'http://localhost:3000'] }))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -45,8 +46,8 @@ app.use('/images', imagesRouter);
 
 app.use(corsMiddleware);
 
-let PORT = process.env.PORT || 80
-app.listen(PORT);
+// let PORT = process.env.PORT || 80
+// app.listen(PORT);
 
 
 module.exports = app;
