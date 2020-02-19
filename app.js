@@ -45,7 +45,7 @@ app.use('/images', imagesRouter);
 
 app.use(corsMiddleware);
 
-let PORT = process.env.PORT
+let PORT = process.env.PORT || 80
 app.listen(PORT);
 
 
