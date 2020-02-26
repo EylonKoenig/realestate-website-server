@@ -9,13 +9,14 @@ router.get('/', function(req, res, next) {
     connection.query('CALL getApartmentsByCreateTime()', function(error, results, fields) {
         if (error) throw error;
         res.send(results[0]);
-
+        connection.end();
     });
 });
 router.get('/:userId', function(req, res, next) {
     connection.query(`SELECT * FROM users WHERE id = ${req.params.userId}`, function(error, results, fields) {
         if (error) throw error;
         res.send(results[0]);
+        connection.end();
 
     });
 });
@@ -28,7 +29,7 @@ router.post('/edit_user', function(req, res, next) {
     connection.query(insertQuery, function(error, results, fields) {
         if (error) throw error;
         res.send(results[0]);
-
+        connection.end();
     });
 });
 router.get('/admin/allUsers', function(req, res, next) {
@@ -40,6 +41,7 @@ left join users u on ap.user_id = u.id
  group by u.id`, function(error, results, fields) {
         if (error) throw error;
         res.send(results);
+        connection.end();
 
     });
 });

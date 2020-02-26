@@ -11,6 +11,7 @@ function getUser() {
                 return;
             }
             resolve(convertData(results));
+            connection.end();
         });
     });
 }
@@ -27,7 +28,8 @@ async function addUser(data) {
                 reject(error);
                 return;
             }
-            resolve([results.insertId, userPasswordHashed])
+            resolve([results.insertId, userPasswordHashed]);
+            connection.end();
         });
     });
 }

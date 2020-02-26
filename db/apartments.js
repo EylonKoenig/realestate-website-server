@@ -57,6 +57,7 @@ function getAllAdminApartments({ property_type, city, country, minPrice, maxPric
                     return;
                 }
                 resolve(results);
+                connection.end();
             });
         } catch (error) {
             console.log(error);
@@ -73,6 +74,7 @@ function getbyId(apartmentId) {
                 return;
             }
             resolve(results[0]);
+            connection.end();
         });
     });
 }
@@ -98,6 +100,7 @@ function getCountriesApartment() {
                 return;
             }
             resolve(convertData(results[0]));
+            connection.end();
         });
     });
 }
@@ -111,6 +114,7 @@ function getCitiesApartment(country) {
             }
 
             resolve(convertData(results[0]));
+            connection.end();
         });
     });
 }
@@ -124,8 +128,10 @@ function postApartment(formData) {
                 reject(error);
                 return;
             }
-            resolve(results.insertId)
+            resolve(results.insertId);
+            connection.end();
         });
+
     });
 }
 
@@ -137,7 +143,8 @@ function editApartment(formData) {
                 reject(error);
                 return;
             }
-            resolve(results.insertId)
+            resolve(results.insertId);
+            connection.end();
         });
     });
 }
@@ -150,6 +157,7 @@ function getAratmentbyUserId(apartmentId) {
                 return;
             }
             resolve(results[0]);
+            connection.end();
         });
     });
 }
@@ -162,6 +170,7 @@ function deleteApartmentById(apartmentId) {
                 return;
             }
             resolve(results);
+            connection.end();
         });
     });
 }
@@ -174,6 +183,7 @@ function editStatus(status, apartmentId) {
                 return;
             }
             resolve(results);
+            connection.end();
         });
     });
 }

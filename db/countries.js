@@ -10,6 +10,7 @@ function getAllCountries() {
                 return;
             }
             resolve(convertData(results));
+            connection.end();
         });
     });
 }

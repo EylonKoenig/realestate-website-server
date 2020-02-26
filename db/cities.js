@@ -10,6 +10,7 @@ function getAllCities() {
                 return;
             }
             resolve(results[0]);
+            connection.end();
         });
     });
 }
@@ -22,6 +23,7 @@ function getCitiesByName(cities) {
                 return;
             }
             resolve(results[0]);
+            connection.end();
         });
     });
 }
@@ -34,6 +36,7 @@ function getAllCitiesByApartment(country) {
                 return;
             }
             resolve(results[0]);
+            connection.end();
         });
     });
 }

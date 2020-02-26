@@ -3,7 +3,8 @@ const connection = require('./config');
 async function addImages(apartmentId, images) {
     for (let imageUrl in images) {
         try {
-            await connection.query(`INSERT INTO \`realtor\`.\`images\` (\`apartment_id\`, \`url\`) VALUES ('${apartmentId}', '${images[imageUrl]}')`)
+            await connection.query(`INSERT INTO \`realtor\`.\`images\` (\`apartment_id\`, \`url\`) VALUES ('${apartmentId}', '${images[imageUrl]}')`);
+            connection.end();
         } catch (err) {
             console.log(err)
         }
@@ -18,6 +19,7 @@ async function getImagesById(apartmentId) {
                 return;
             }
             resolve(results);
+            connection.end();
         });
     });
 }
@@ -29,6 +31,8 @@ async function deleteImage(imageId) {
                 return;
             }
             resolve(results);
+            connection.end();
+
         });
     });
 }
