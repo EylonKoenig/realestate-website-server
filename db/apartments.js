@@ -4,7 +4,7 @@ const convertData = require('./setData')
 const setInsertQuery = require('./builders/setInserQuery')
 const setUpDateQuery = require('./builders/setUpdateQuery')
 
-function getAllapartments({ property_type, city, country, minPrice, maxPrice, minRooms, maxRooms, minBath, maxBath, page = 1, size = 100 }) {
+function getAllapartments({ property_type, sale_status, city, country, minPrice, maxPrice, minRooms, maxRooms, minBath, maxBath, page = 1, size = 100 }) {
     return new Promise((resolve, reject) => {
         try {
             const { query, params } = Builder.allApartments(page, size)
@@ -17,6 +17,7 @@ function getAllapartments({ property_type, city, country, minPrice, maxPrice, mi
                 .minBath(minBath)
                 .maxBath(maxBath)
                 .property_type(property_type)
+                .sale_status(sale_status)
                 .availability('available')
                 .status('approved')
                 .build();

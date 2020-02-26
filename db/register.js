@@ -27,7 +27,7 @@ async function addUser(data) {
                 reject(error);
                 return;
             }
-            resolve(results.insertId, userPasswordHashed)
+            resolve([results.insertId, userPasswordHashed])
         });
     });
 }
