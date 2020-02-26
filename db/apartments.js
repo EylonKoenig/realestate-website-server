@@ -27,6 +27,8 @@ function getAllapartments({ property_type, sale_status, city, country, minPrice,
                     return;
                 }
                 resolve(results);
+                connection.end();
+
             });
         } catch (error) {
             console.log(error);
