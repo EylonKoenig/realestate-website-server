@@ -83,6 +83,7 @@ function getLastFourApartment() {
                 return;
             }
             resolve(results[0]);
+            connection.end();
         });
     });
 }
