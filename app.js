@@ -10,7 +10,8 @@ var countriesRouter = require('./routes/countries');
 var citiesRouter = require('./routes/cities');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
-var cors = require('cors')
+var cors = require('cors');
+var sslRedirect = require('heroku-ssl-redirect');
 
 var app = express();
 
