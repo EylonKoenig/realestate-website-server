@@ -12,7 +12,6 @@ function getUser(data) {
                 return;
             }
             resolve(results[0]);
-            connection.end();
 
         });
     });

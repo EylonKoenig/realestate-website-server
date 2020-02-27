@@ -27,7 +27,6 @@ function getAllapartments({ property_type, sale_status, city, country, minPrice,
                     return;
                 }
                 resolve(results);
-                connection.end();
 
             });
         } catch (error) {
@@ -57,7 +56,6 @@ function getAllAdminApartments({ property_type, city, country, minPrice, maxPric
                     return;
                 }
                 resolve(results);
-                connection.end();
             });
         } catch (error) {
             console.log(error);
@@ -74,7 +72,6 @@ function getbyId(apartmentId) {
                 return;
             }
             resolve(results[0]);
-            connection.end();
         });
     });
 }
@@ -87,7 +84,6 @@ function getLastFourApartment() {
                 return;
             }
             resolve(results[0]);
-            connection.end();
         });
     });
 }
@@ -100,7 +96,6 @@ function getCountriesApartment() {
                 return;
             }
             resolve(convertData(results[0]));
-            connection.end();
         });
     });
 }
@@ -114,7 +109,6 @@ function getCitiesApartment(country) {
             }
 
             resolve(convertData(results[0]));
-            connection.end();
         });
     });
 }
@@ -129,7 +123,6 @@ function postApartment(formData) {
                 return;
             }
             resolve(results.insertId);
-            connection.end();
         });
 
     });
@@ -144,7 +137,6 @@ function editApartment(formData) {
                 return;
             }
             resolve(results.insertId);
-            connection.end();
         });
     });
 }
@@ -157,7 +149,6 @@ function getAratmentbyUserId(apartmentId) {
                 return;
             }
             resolve(results[0]);
-            connection.end();
         });
     });
 }
@@ -170,7 +161,6 @@ function deleteApartmentById(apartmentId) {
                 return;
             }
             resolve(results);
-            connection.end();
         });
     });
 }
@@ -183,7 +173,6 @@ function editStatus(status, apartmentId) {
                 return;
             }
             resolve(results);
-            connection.end();
         });
     });
 }
