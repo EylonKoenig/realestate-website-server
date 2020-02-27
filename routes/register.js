@@ -13,7 +13,7 @@ router.post('/', async function(req, res, next) {
     const userDetails = await addUser(data)
     if (userDetails) {
         const UserDetails = { id: userDetails[0], user: data.email, password: userDetails[1], first_name: data.first_name, role_id: data.role_id }
-        res.cookie("auth", JSON.stringify(UserDetails), { maxAge: 1000 * 60 * 60 * 24 })
+        res.cookie("auth", JSON.stringify(UserDetails), { maxAge: 1000 * 60 * 60 * 24, domain: "shielded-savannah-89374.herokuapp.com", httpOnly: false })
         res.status(200).send({ userDetails })
     } else { res.status(401).json({ error: "errror" }) }
 
