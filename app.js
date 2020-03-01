@@ -16,7 +16,7 @@ var sslRedirect = require('heroku-ssl-redirect');
 var app = express();
 
 
-app.use(cors({ credentials: true, origin: ['https://koenigrealestate.netlify.com', 'http://localhost:3000'] }))
+app.use(cors({ credentials: true, origin: ['https://koenigrealestate.netlify.com', 'http://localhost:3000', 'https://koenigrealestate.herokuapp.com'] }))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -28,7 +28,7 @@ app.use(sslRedirect());
 
 
 var corsMiddleware = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', req.header.origin); //replace localhost with actual host
+    res.header('Access-Control-Allow-Origin', req.header.origin);
     res.header('Access-Control-Allow-Methods', 'OPTIONS, GET, PUT, PATCH, POST, DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type, X-Requested-With, Authorization');
 
