@@ -16,7 +16,7 @@ var sslRedirect = require('heroku-ssl-redirect');
 var app = express();
 
 
-app.use(cors({ credentials: true, origin: ['https://koenigrealestate.netlify.com', 'http://localhost:3000', 'https://koenigrealestate.herokuapp.com'] }))
+app.use(cors({ credentials: true, origin: ['https://koenigrealestate.netlify.com', 'http://localhost:3000', 'https://koenigrealestate.herokuapp.com','https://koenigrealestate.netlify.app'] }))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
