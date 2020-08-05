@@ -12,7 +12,7 @@
         "cors": "^2.8.5",
         "debug": "~2.6.9",
         "express": "~4.16.1",
-        "express-fileupload": "^1.1.6",
+        "express-fileupload": "^1.1.9",
         "heroku-ssl-redirect": "0.0.4",
         "morgan": "~1.9.1",
         "mysql": "^2.17.1"
